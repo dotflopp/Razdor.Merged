@@ -1,0 +1,6 @@
+@Razdor.Messenger.Routing_HostAddress = http://localhost:5228
+
+GET {{Razdor.Messenger.Routing_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
