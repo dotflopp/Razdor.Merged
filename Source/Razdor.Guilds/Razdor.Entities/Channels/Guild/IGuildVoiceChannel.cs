@@ -1,8 +1,11 @@
+using System.Text.Json.Serialization;
+
 namespace Razdor.Guilds.Entities.Channels.Guild;
 
 public interface IGuildVoiceChannel : IGuildChannel
 {
-    string SignalingServer { get; }
+    [JsonIgnore]
+    string? SignalingServer { get; }
     uint Bitrate { get; }
     uint UserLimit { get; }
 }

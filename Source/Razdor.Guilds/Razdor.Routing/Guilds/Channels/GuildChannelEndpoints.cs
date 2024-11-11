@@ -39,8 +39,7 @@ namespace Razdor.Guilds.Routing.Guilds.Channels
             [FromServices] IChannelsRepository channels,
             [FromRoute] ulong guildId,
             [FromBody] ChannelCreationModel channelModel
-        )
-        {
+        ){
             IGuildChannel guildChannel = await channels.CreateGuildChannelAsync(guildId, channelModel);
             
             return Results.Created(
@@ -59,8 +58,8 @@ namespace Razdor.Guilds.Routing.Guilds.Channels
         }
         
         internal static async Task<IResult> FindGuildChannelAsync(
-            [FromHeader] ulong guildId, 
-            [FromHeader] ulong channelId, 
+            [FromRoute] ulong guildId, 
+            [FromRoute] ulong channelId, 
             [FromServices] IChannelsRepository channels
         ){
             return Results.Ok(

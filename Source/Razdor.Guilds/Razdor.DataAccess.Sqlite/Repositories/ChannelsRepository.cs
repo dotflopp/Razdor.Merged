@@ -47,10 +47,10 @@ public class ChannelsRepository : IChannelsRepository
         return entity.Entity;
     }
 
-    public async Task<IReadOnlyCollection<IGuildChannel>> GetGuildChannelsAsync(
+    public async Task<IReadOnlyCollection<IGuildVoiceChannel>> GetGuildChannelsAsync(
         EntityId guildId
     ){
-        return await _context.GuildChannels
+        return await _context.GuildVoiceChannels
             .Where(channel => channel.GuildId == guildId)
             .ToListAsync();
     }

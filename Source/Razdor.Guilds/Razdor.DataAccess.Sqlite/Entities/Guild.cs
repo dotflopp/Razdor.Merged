@@ -9,8 +9,6 @@ public class Guild : IGuild
     public required string Name { get; init; }
     public required string? Icon { get; init; }
     
-    [JsonIgnore]
     internal IReadOnlyCollection<User>? Users { get; set; }
-    [JsonIgnore]
     internal IReadOnlyCollection<GuildChannel>? Channels { get; set; }
 }

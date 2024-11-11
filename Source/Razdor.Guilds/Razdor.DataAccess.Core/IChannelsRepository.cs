@@ -7,7 +7,7 @@ namespace Razdor.Guilds.DataAccess.Core;
 
 public interface IChannelsRepository : IRepository<IChannel>
 {
-    Task<IReadOnlyCollection<IGuildChannel>> GetGuildChannelsAsync(EntityId guildId);
+    Task<IReadOnlyCollection<IGuildVoiceChannel>> GetGuildChannelsAsync(EntityId guildId);
     
     Task<IGuildChannel?> FindGuildChannelAsync(
         EntityId guildId,
