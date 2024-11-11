@@ -12,12 +12,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Razdor.Voices.Internal\Razdor.Voices.Internal.csproj" />
       <ProjectReference Include="..\..\Razdor.Guilds\Razdor.Guilds.Services.Core\Razdor.Guilds.Services.Core.csproj" />
       <ProjectReference Include="..\..\Razdor.Shared\Razdor.Shared.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Signaling\" />
     </ItemGroup>
 
 </Project>

@@ -8,7 +8,9 @@ using Razdor.DataAccess.EntityFramework.Repositories;
 using Razdor.Guilds.DataAccess.Core;
 using Razdor.Guilds.Routing;
 using Razdor.StartApp.Constraints;
+using Razdor.Voices.Internal;
 using Razdor.Voices.Routing;
+using Razdor.Voices.Services.Signaling;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +40,11 @@ builder.Services.AddCors(builder =>
     });
 });
 
+//Logging
+builder.Logging.SetMinimumLevel(LogLevel.Trace);
 
+//db services
+//TODO Вынести в отдельный метод
 builder.Services.AddDbContext<RazdorDataContext>(options =>
 {
     options.UseSqlite("Data Source=razdor.db");
@@ -48,13 +54,18 @@ builder.Services.AddTransient<IUserRepository, UsersRepository>();
 builder.Services.AddTransient<IChannelsRepository, ChannelsRepository>();
 builder.Services.AddTransient<IGuildsRepository, GuildsRepository>();
 
-builder.Logging.SetMinimumLevel(LogLevel.Trace);
+//Signaling services
+builder.Services.AddSingleton<ISignalingServiceProvider, SignalingOneServiceProvider>();
 
-builder.Services.AddTransient<RazdorDataContext>();
-
+builder.Services.AddSingleton<ISignalingInternalService>(
+    new SignalingInternalService(
+        builder.Configuration.GetValue<string>(
+            "ASPNETCORE_URLS"
+        ) + "/signaling"
+    )
+);
 
 WebApplication app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {

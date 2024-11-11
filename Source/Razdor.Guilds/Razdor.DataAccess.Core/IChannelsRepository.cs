@@ -15,4 +15,5 @@ public interface IChannelsRepository : IRepository<IChannel>
     );
 
     Task<IGuildChannel> CreateGuildChannelAsync(ulong guildId, ChannelCreationModel model);
+    Task<bool> TrySetNewSignalingServiceAsync(IGuildChannel guildChannel, ulong signalingServiceId);
 }

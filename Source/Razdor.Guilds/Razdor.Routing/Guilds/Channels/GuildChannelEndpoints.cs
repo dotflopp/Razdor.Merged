@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Razdor.Guilds.DataAccess.Core;
 using Razdor.Guilds.DataAccess.Core.Models;
 using Razdor.Guilds.Entities.Channels.Guild;
+using Razdor.Voices.Internal;
 
 namespace Razdor.Guilds.Routing.Guilds.Channels
 {
@@ -18,8 +19,8 @@ namespace Razdor.Guilds.Routing.Guilds.Channels
             groupBuilder.MapGet("/", GetGuildAllChannelsAsync)
                 .WithSummary("Получить все каналы гильдии");
             
-            groupBuilder.MapPut("/", CreateGuildChannelAsync)
-                .WithSummary("Создать новый канал в гильдии");
+            groupBuilder.MapPost("/", CreateGuildChannelAsync)
+                .WithSummary("Создать новый канал в гильдии");  
             
             groupBuilder.MapGet("/{channelId:ulong}", FindGuildChannelAsync)
                 .WithSummary("Получить информацию об одном канале гильдии");
@@ -27,12 +28,76 @@ namespace Razdor.Guilds.Routing.Guilds.Channels
             groupBuilder.MapPost("/{channelId:ulong}/join", JoinGuildChannelAsync)
                 .WithSummary("Создать сессию, если существует, вернется существующая");
             
+            groupBuilder.MapGet("/{channelId:ulong}/users", GetUsersInVoiceAsync)
+                .WithSummary("Получить список пользователей в канале");
+            
             return builder;
         }
 
-        internal static Task<IResult> JoinGuildChannelAsync(HttpContext context)
-        {
-            return Task.FromResult(Results.Ok());
+        private static async Task<IResult> GetUsersInVoiceAsync(
+            [FromRoute] ulong guildId,
+            [FromRoute] ulong channelId,
+            [FromServices] IChannelsRepository channels,
+            [FromServices] ISignalingServiceProvider signalingServices
+        ){
+            IGuildChannel? channel = await channels.FindGuildChannelAsync(guildId, channelId);
+            
+            if (channel is not IGuildVoiceChannel voiceChannel)
+                return Results.NotFound();
+            
+            if (!voiceChannel.SignalingId.HasValue)
+                return Results.NotFound();
+
+            ISignalingInternalService? signalingService = await signalingServices.FindSignalingServiceAsync(
+                voiceChannel.SignalingId.Value
+            );
+            
+            if (signalingService is null)
+                return Results.NotFound();
+
+            IRoom? room = await signalingService.FindRoomAsync(channelId);
+            
+            if (room is null)
+                return Results.NotFound();
+
+            IEnumerable<UserIdentity> users = await room.GetUsersAsync();
+            
+            return Results.Ok(users);
+        }
+
+        internal static async Task<IResult> JoinGuildChannelAsync(
+            [FromRoute] ulong guildId,
+            [FromRoute] ulong channelId,
+            [FromServices] IChannelsRepository channels,
+            [FromServices] ISignalingServiceProvider signalingServices
+        ){
+            IGuildChannel? channel = await channels.FindGuildChannelAsync(guildId, channelId);
+            
+            if (channel is not IGuildVoiceChannel voiceChannel)
+                return Results.NotFound();
+            
+            ISignalingInternalService? signalingService = null;
+            if (voiceChannel.SignalingId.HasValue)
+            {
+                signalingService = await signalingServices.FindSignalingServiceAsync(
+                    voiceChannel.SignalingId.Value
+                );
+            }
+
+            if (signalingService is null)
+            {
+                signalingService = await signalingServices.GetOptimalSignalingServiceAsync(
+                    guildId, 
+                    channelId
+                );
+
+                await channels.TrySetNewSignalingServiceAsync(voiceChannel, signalingService.Id);
+            }
+            
+            IRoom room = await signalingService.CreateIfNotExistRoomAsync(channelId);
+            IRoomSession session = await room.CreateUserSessionIfNotExistsAsync();
+            
+            return Results.Ok(session);
         }
 
         internal static async Task<IResult> CreateGuildChannelAsync(

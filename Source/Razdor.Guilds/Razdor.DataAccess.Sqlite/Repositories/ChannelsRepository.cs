@@ -32,7 +32,7 @@ public class ChannelsRepository : IChannelsRepository
         GuildChannel channel = new GuildVoiceChannel()
         {
             Id = 0,
-            SignalingServer = null,
+            SignalingId = null,
             Name = model.Name,
             Position = model.Position,
             Type = model.Type,
@@ -45,6 +45,20 @@ public class ChannelsRepository : IChannelsRepository
         await _context.SaveChangesAsync();
         
         return entity.Entity;
+    }
+
+    public async Task<bool> TrySetNewSignalingServiceAsync(
+        IGuildChannel channel, 
+        ulong signalingId
+    ){
+        if (channel is not GuildVoiceChannel voiceChannel)
+            return false;
+        
+        voiceChannel.SignalingId = signalingId;
+        EntityEntry<GuildChannel> entry = _context.GuildChannels.Update(voiceChannel);
+        await _context.SaveChangesAsync();
+        
+        return true;
     }
 
     public async Task<IReadOnlyCollection<IGuildVoiceChannel>> GetGuildChannelsAsync(

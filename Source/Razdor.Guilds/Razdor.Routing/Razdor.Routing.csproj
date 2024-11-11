@@ -17,6 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Razdor.Voices.Internal\Razdor.Voices.Internal.csproj" />
       <ProjectReference Include="..\Razdor.DataAccess.Core\Razdor.DataAccess.Core.csproj" />
     </ItemGroup>
 
