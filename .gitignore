@@ -5,3 +5,7 @@
 #Файлы сборки
 bin/
 obj/
+
+#БД
+**/Migrations
+razdor.db*
