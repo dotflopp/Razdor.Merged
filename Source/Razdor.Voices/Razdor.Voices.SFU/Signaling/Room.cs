@@ -42,6 +42,14 @@ public class Room : IRoom
         );
     }
 
+    public Task<UserIdentity> FindUserAsync(string sessionId)
+    {
+        if (!Sessions.TryGetValue(sessionId, out UserIdentity userIdentity))
+            return Task.FromResult<UserIdentity?>(null);
+        
+        return Task.FromResult(userIdentity!);
+    }
+
     public async Task ConnectUserAsync(string sessionId, UserIdentity user)
     {
         Sessions[sessionId] = user;   

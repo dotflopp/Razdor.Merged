@@ -58,13 +58,17 @@ namespace Razdor.Voices.Routing.Signaling
         {
             _logger.LogInformation("Disconnect from session {0}", sessionId);
             IRoom? room = await _signalingService.FindRoomBySessionAsync(sessionId);
-            
             if (room == null)
                 throw new Exception($"Room {sessionId} not found");
             
             _sessionConnections.Remove(sessionId);
             await room.DisconnectUserAsync(sessionId);
-            await SendToRoomBySessions(room, "UserDisconnected", sessionId, sessionId);
+            
+            UserIdentity? user = await room.FindUserAsync(sessionId);
+            if (user != null)
+            {
+                await SendToRoomBySessions(room, "UserDisconnected", user, sessionId);
+            }
         }
         
         [HubMethodName("Offer")]
