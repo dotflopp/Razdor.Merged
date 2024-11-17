@@ -1,6 +1,6 @@
 using Razdor.Guilds.Entities.Channels.Guild;
 
-namespace Razdor.DataAccess.EntityFramework.Entities;
+namespace Razdor.DataAccess.EntityFramework.Entities.Channels.Guild;
 
 public class GuildVoiceChannel : GuildChannel, IGuildVoiceChannel
 {

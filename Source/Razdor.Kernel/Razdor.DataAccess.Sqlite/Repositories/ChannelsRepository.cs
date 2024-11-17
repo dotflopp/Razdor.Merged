@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Razdor.DataAccess.EntityFramework;
 using Razdor.DataAccess.EntityFramework.Entities;
+using Razdor.DataAccess.EntityFramework.Entities.Channels.Guild;
 using Razdor.Guilds.DataAccess.Core;
 using Razdor.Guilds.DataAccess.Core.Models;
 using Razdor.Guilds.Entities.Channels;

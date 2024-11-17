@@ -5,7 +5,6 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <OutputType>Library</OutputType>
-        <RootNamespace>Razdor.Guilds.Routing</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,8 +16,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\Razdor.Voices.Internal\Razdor.Voices.Internal.csproj" />
       <ProjectReference Include="..\Razdor.DataAccess.Core\Razdor.DataAccess.Core.csproj" />
+      <ProjectReference Include="..\..\Razdor.Voices\Razdor.Voices.Internal\Razdor.Voices.Internal.csproj" />
     </ItemGroup>
 
 </Project>

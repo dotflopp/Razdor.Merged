@@ -12,8 +12,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\Razdor.Voices.Internal\Razdor.Voices.Internal.csproj" />
-      <ProjectReference Include="..\..\Razdor.Guilds\Razdor.Guilds.Services.Core\Razdor.Guilds.Services.Core.csproj" />
+      <ProjectReference Include="..\..\..\Source\Razdor.Voices\Razdor.Voices.Internal\Razdor.Voices.Internal.csproj" />
+      <ProjectReference Include="..\..\Razdor.Kernel\Razdor.Services.Core\Razdor.Services.Core.csproj" />
       <ProjectReference Include="..\..\Razdor.Shared\Razdor.Shared.csproj" />
     </ItemGroup>
 

@@ -1,6 +1,6 @@
 using Razdor.Guilds.Entities.Channels;
 
-namespace Razdor.DataAccess.EntityFramework.Entities;
+namespace Razdor.DataAccess.EntityFramework.Entities.Channels;
 
 public abstract class BaseChannel : IChannel
 {

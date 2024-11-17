@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Razdor.DataAccess.EntityFramework.Entities.Channels.Guild;
 using Razdor.Guilds.Entities.Guilds;
 
 namespace Razdor.DataAccess.EntityFramework.Entities;

@@ -1,7 +1,6 @@
-using System.Text.Json.Serialization;
 using Razdor.Guilds.Entities.Channels.Guild;
 
-namespace Razdor.DataAccess.EntityFramework.Entities;
+namespace Razdor.DataAccess.EntityFramework.Entities.Channels.Guild;
 
 public abstract class GuildChannel : BaseChannel, IGuildChannel
 {
@@ -9,5 +8,5 @@ public abstract class GuildChannel : BaseChannel, IGuildChannel
     public required EntityId GuildId { get; init; }
     public required uint Position { get; init; }
     
-    internal Guild? Guild { get; set; } = null;
+    internal Entities.Guild? Guild { get; set; } = null;
 }

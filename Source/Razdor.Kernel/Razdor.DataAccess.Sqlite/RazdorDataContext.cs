@@ -3,6 +3,8 @@
 using Microsoft.EntityFrameworkCore;
 
 using Razdor.DataAccess.EntityFramework.Entities;
+using Razdor.DataAccess.EntityFramework.Entities.Channels;
+using Razdor.DataAccess.EntityFramework.Entities.Channels.Guild;
 using Razdor.DataAccess.EntityFramework.EntityConfigurations;
 
 namespace Razdor.DataAccess.EntityFramework;

@@ -5,11 +5,6 @@
         <LangVersion>preview</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Razdor.Guilds.DataAccess.Core</RootNamespace>
     </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Razdor.Entities\Razdor.Entities.csproj" />
-    </ItemGroup>
 
 </Project>
