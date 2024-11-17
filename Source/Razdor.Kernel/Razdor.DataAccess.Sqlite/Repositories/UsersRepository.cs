@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-
-using Razdor.Guilds.DataAccess.Core;
-using Razdor.Guilds.Entities.Users;
+using Razdor.DataAccess.Core;
+using Razdor.Entities.Users;
 
 namespace Razdor.DataAccess.EntityFramework.Repositories;
 

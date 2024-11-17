@@ -1,11 +1,10 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using Microsoft.AspNetCore.Mvc;
-using Razdor.Guilds.DataAccess.Core;
-using Razdor.Guilds.DataAccess.Core.Models;
-using Razdor.Guilds.Entities.Guilds;
-using Razdor.Guilds.Routing.Guilds.Channels;
+﻿using Microsoft.AspNetCore.Mvc;
+using Razdor.DataAccess.Core;
+using Razdor.DataAccess.Core.Models;
+using Razdor.Entities.Guilds;
+using Razdor.Routing.Guilds.Channels;
 
-namespace Razdor.Guilds.Routing.Guilds
+namespace Razdor.Routing.Guilds
 {
     public static class GuildEndpoints
     {

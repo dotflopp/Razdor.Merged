@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using Microsoft.AspNetCore.SignalR;
-using Razdor.Voices.Internal;
+using Razdor.Signaling.Internal;
 
 namespace Razdor.Voices.Routing.Signaling
 {

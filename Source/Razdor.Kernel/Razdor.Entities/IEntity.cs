@@ -1,4 +1,4 @@
-namespace Razdor.Guilds.Entities;
+namespace Razdor.Entities;
 
 public interface IEntity
 {

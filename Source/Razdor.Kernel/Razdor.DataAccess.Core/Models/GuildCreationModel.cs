@@ -1,6 +1,4 @@
-using Razdor.Guilds.Entities.Guilds;
-
-namespace Razdor.Guilds.DataAccess.Core.Models;
+namespace Razdor.DataAccess.Core.Models;
 
 public class GuildCreationModel
 {

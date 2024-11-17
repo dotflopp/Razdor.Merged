@@ -2,13 +2,12 @@ using System.Reflection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-
+using Razdor.DataAccess.Core;
 using Razdor.DataAccess.EntityFramework;
 using Razdor.DataAccess.EntityFramework.Repositories;
-using Razdor.Guilds.DataAccess.Core;
-using Razdor.Guilds.Routing;
+using Razdor.Routing;
+using Razdor.Signaling.Internal;
 using Razdor.StartApp.Constraints;
-using Razdor.Voices.Internal;
 using Razdor.Voices.Routing;
 using Razdor.Voices.Services.Signaling;
 

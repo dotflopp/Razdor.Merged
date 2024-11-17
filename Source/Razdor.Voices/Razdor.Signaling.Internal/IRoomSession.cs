@@ -1,4 +1,4 @@
-namespace Razdor.Voices.Internal;
+namespace Razdor.Signaling.Internal;
 
 public interface IRoomSession
 {

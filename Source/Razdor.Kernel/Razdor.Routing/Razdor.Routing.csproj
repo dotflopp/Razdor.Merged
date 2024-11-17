@@ -17,7 +17,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Razdor.DataAccess.Core\Razdor.DataAccess.Core.csproj" />
-      <ProjectReference Include="..\..\Razdor.Voices\Razdor.Voices.Internal\Razdor.Voices.Internal.csproj" />
+      <ProjectReference Include="..\..\Razdor.Voices\Razdor.Signaling.Internal\Razdor.Signaling.Internal.csproj" />
     </ItemGroup>
 
 </Project>

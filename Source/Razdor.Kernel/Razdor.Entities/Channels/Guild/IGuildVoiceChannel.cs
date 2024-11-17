@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Razdor.Guilds.Entities.Channels.Guild;
+namespace Razdor.Entities.Channels.Guild;
 
 public interface IGuildVoiceChannel : IGuildChannel
 {

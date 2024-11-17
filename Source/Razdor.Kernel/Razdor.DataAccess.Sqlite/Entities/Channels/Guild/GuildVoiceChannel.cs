@@ -1,4 +1,4 @@
-using Razdor.Guilds.Entities.Channels.Guild;
+using Razdor.Entities.Channels.Guild;
 
 namespace Razdor.DataAccess.EntityFramework.Entities.Channels.Guild;
 

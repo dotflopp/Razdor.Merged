@@ -1,4 +1,4 @@
-namespace Razdor.Guilds.Entities.Users;
+namespace Razdor.Entities.Users;
 
 public interface IUser
 {

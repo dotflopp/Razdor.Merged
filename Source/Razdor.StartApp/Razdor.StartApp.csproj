@@ -21,6 +21,8 @@
     <ProjectReference Include="..\Razdor.Kernel\Razdor.DataAccess.Sqlite\Razdor.DataAccess.EntityFramework.csproj" />
     <ProjectReference Include="..\Razdor.Kernel\Razdor.Routing\Razdor.Routing.csproj" />
     <ProjectReference Include="..\Razdor.Kernel\Razdor.Services\Razdor.Services.csproj" />
+    <ProjectReference Include="..\Razdor.Voices\Razdor.Signaling.Routing\Razdor.Signaling.Routing.csproj" />
+    <ProjectReference Include="..\Razdor.Voices\Razdor.Signaling.Services\Razdor.Signaling.Services.csproj" />
     <ProjectReference Include="..\Razdor.Voices\Razdor.Voices.Routing\Razdor.Voices.Routing.csproj" />
     <ProjectReference Include="..\Razdor.Voices\Razdor.Voices.SFU\Razdor.Voices.Services.csproj" />
   </ItemGroup>

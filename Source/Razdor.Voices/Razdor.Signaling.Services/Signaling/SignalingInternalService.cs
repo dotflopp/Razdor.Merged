@@ -1,5 +1,5 @@
 using System.Collections.Concurrent;
-using Razdor.Voices.Internal;
+using Razdor.Signaling.Internal;
 
 namespace Razdor.Voices.Services.Signaling;
 

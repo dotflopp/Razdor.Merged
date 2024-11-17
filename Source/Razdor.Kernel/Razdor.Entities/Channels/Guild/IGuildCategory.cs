@@ -1,6 +1,4 @@
-using Razdor.Guilds.Entities.Guilds;
-
-namespace Razdor.Guilds.Entities.Channels.Guild;
+namespace Razdor.Entities.Channels.Guild;
 
 public interface IGuildCategory : IGuildChannel
 {

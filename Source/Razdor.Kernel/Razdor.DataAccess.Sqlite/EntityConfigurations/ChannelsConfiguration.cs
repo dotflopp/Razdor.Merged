@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Razdor.DataAccess.EntityFramework.Entities;
 using Razdor.DataAccess.EntityFramework.Entities.Channels;
 using Razdor.DataAccess.EntityFramework.Entities.Channels.Guild;
-using Razdor.Guilds.Entities.Channels;
+using Razdor.Entities.Channels;
 
 namespace Razdor.DataAccess.EntityFramework.EntityConfigurations;
 

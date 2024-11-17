@@ -1,9 +1,8 @@
-using Razdor.Guilds.DataAccess.Core.Models;
-using Razdor.Guilds.Entities.Channels.Guild;
-using Razdor.Guilds.Entities.Guilds;
-using Razdor.Guilds.Entities.Users;
+using Razdor.DataAccess.Core.Models;
+using Razdor.Entities.Guilds;
+using Razdor.Entities.Users;
 
-namespace Razdor.Guilds.DataAccess.Core;
+namespace Razdor.DataAccess.Core;
 
 public interface IGuildsRepository : IRepository<IGuild>
 {

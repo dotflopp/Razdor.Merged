@@ -1,9 +1,8 @@
 using System.Net;
 using System.Net.Sockets;
-
 using Razdor.Shared;
 
-namespace Razdor.Voices.Transport.Rtp;
+namespace Razdor.Voices.SFU.Rtp;
 
 public class RtpListener : Disposable, IRtpListener
 {

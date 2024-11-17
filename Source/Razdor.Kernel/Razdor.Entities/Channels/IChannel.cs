@@ -1,4 +1,4 @@
-namespace Razdor.Guilds.Entities.Channels;
+namespace Razdor.Entities.Channels;
 
 public interface IChannel: IEntity
 {

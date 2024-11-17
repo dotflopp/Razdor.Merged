@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
-using Razdor.Guilds.Entities.Guilds;
+using Razdor.Entities.Guilds;
 
-namespace Razdor.Guilds.Entities.Channels.Guild;
+namespace Razdor.Entities.Channels.Guild;
 
 [JsonPolymorphic(
     UnknownDerivedTypeHandling = JsonUnknownDerivedTypeHandling.FallBackToNearestAncestor,

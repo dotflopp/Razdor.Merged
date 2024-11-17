@@ -1,6 +1,6 @@
 using System.Collections.Concurrent;
 using System.Threading.Channels;
-using Razdor.Voices.Internal;
+using Razdor.Signaling.Internal;
 
 namespace Razdor.Voices.Services.Signaling;
 

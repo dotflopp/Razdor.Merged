@@ -1,9 +1,8 @@
-using Razdor.Guilds.DataAccess.Core.Models;
-using Razdor.Guilds.Entities.Channels;
-using Razdor.Guilds.Entities.Channels.Guild;
-using Razdor.Guilds.Entities.Guilds;
+using Razdor.DataAccess.Core.Models;
+using Razdor.Entities.Channels;
+using Razdor.Entities.Channels.Guild;
 
-namespace Razdor.Guilds.DataAccess.Core;
+namespace Razdor.DataAccess.Core;
 
 public interface IChannelsRepository : IRepository<IChannel>
 {

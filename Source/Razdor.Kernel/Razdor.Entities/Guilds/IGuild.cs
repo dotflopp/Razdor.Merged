@@ -1,6 +1,4 @@
-﻿using Razdor.Guilds.Entities.Channels.Guild;
-
-namespace Razdor.Guilds.Entities.Guilds;
+﻿namespace Razdor.Entities.Guilds;
 
 public interface IGuild : IEntity, INamed
 {

@@ -1,7 +1,6 @@
-using Razdor.Guilds.Entities.Channels;
-using Razdor.Guilds.Entities.Channels.Guild;
+using Razdor.Entities.Channels;
 
-namespace Razdor.Guilds.DataAccess.Core.Models;
+namespace Razdor.DataAccess.Core.Models;
 
 public class ChannelCreationModel
 {

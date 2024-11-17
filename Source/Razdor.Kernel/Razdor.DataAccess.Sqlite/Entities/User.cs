@@ -1,4 +1,4 @@
-using Razdor.Guilds.Entities.Users;
+using Razdor.Entities.Users;
 
 namespace Razdor.DataAccess.EntityFramework.Entities;
 

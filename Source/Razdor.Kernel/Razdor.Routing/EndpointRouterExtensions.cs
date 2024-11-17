@@ -1,6 +1,6 @@
-using Razdor.Guilds.Routing.Guilds;
+using Razdor.Routing.Guilds;
 
-namespace Razdor.Guilds.Routing;
+namespace Razdor.Routing;
 
 public static class EndpointRouterExtensions
 {

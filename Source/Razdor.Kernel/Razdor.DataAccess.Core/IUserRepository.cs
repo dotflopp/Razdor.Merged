@@ -1,7 +1,6 @@
-using Razdor.Guilds.Entities.Guilds;
-using Razdor.Guilds.Entities.Users;
+using Razdor.Entities.Users;
 
-namespace Razdor.Guilds.DataAccess.Core;
+namespace Razdor.DataAccess.Core;
 
 public interface IUserRepository : IRepository<IUser>
 {

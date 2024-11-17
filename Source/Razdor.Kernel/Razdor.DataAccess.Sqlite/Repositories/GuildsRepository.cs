@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Razdor.DataAccess.Core;
+using Razdor.DataAccess.Core.Models;
 using Razdor.DataAccess.EntityFramework.Entities;
-using Razdor.Guilds.DataAccess.Core;
-using Razdor.Guilds.DataAccess.Core.Models;
-using Razdor.Guilds.Entities.Guilds;
-using Razdor.Guilds.Entities.Users;
+using Razdor.Entities.Guilds;
+using Razdor.Entities.Users;
 
 namespace Razdor.DataAccess.EntityFramework.Repositories;
 
