@@ -2,11 +2,14 @@ using System.Reflection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Razdor.Auth.Services;
 using Razdor.DataAccess.Core;
 using Razdor.DataAccess.EntityFramework;
 using Razdor.DataAccess.EntityFramework.Repositories;
 using Razdor.Routing;
+using Razdor.Services;
 using Razdor.Signaling.Internal;
+using Razdor.Signaling.Services;
 using Razdor.StartApp.Constraints;
 using Razdor.Voices.Routing;
 using Razdor.Voices.Services.Signaling;
@@ -42,26 +45,13 @@ builder.Services.AddCors(builder =>
 //Logging
 builder.Logging.SetMinimumLevel(LogLevel.Trace);
 
-//db services
-//TODO Вынести в отдельный метод
-builder.Services.AddDbContext<RazdorDataContext>(options =>
-{
-    options.UseSqlite("Data Source=razdor.db");
-});
-
-builder.Services.AddTransient<IUserRepository, UsersRepository>();
-builder.Services.AddTransient<IChannelsRepository, ChannelsRepository>();
-builder.Services.AddTransient<IGuildsRepository, GuildsRepository>();
-
-//Signaling services
-builder.Services.AddSingleton<ISignalingServiceProvider, SignalingOneServiceProvider>();
-
-builder.Services.AddSingleton<ISignalingInternalService>(
-    new SignalingInternalService(
-        builder.Configuration.GetValue<string>(
-            "ASPNETCORE_URLS"
-        ) + "/signaling"
-    )
+//Сервисы приложения
+builder.Services.AddAuthServices();
+builder.Services.AddKernelServices();
+builder.Services.AddSignalingServices(
+    builder.Configuration.GetValue<string>(
+        "ASPNETCORE_URLS"
+    ) + "/signaling"
 );
 
 WebApplication app = builder.Build();
@@ -75,6 +65,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors();
 
+//Роуты приложения
 app.MapSignalingHub();
 app.MapRazdorApi();
 

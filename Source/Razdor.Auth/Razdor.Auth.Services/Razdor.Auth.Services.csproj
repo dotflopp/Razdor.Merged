@@ -11,9 +11,4 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Razdor.DataAccess.Core\Razdor.DataAccess.Core.csproj" />
-      <ProjectReference Include="..\Razdor.DataAccess.Sqlite\Razdor.DataAccess.EntityFramework.csproj" />
-    </ItemGroup>
-
 </Project>
