@@ -22,3 +22,4 @@ If you have any issues with live streaming, please [write it](https://github.com
 ```
     docker run --rm -p 26.201.58.143:5154:8080 image-name
 ```
+WARNING. A firewall may interfere with network detection.
