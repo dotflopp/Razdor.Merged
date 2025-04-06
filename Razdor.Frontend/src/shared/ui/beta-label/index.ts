@@ -1,0 +1,1 @@
+export { default as BetaLabel } from "./BetaLabel.vue"

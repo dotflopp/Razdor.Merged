@@ -1,0 +1,22 @@
+.parameter{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    gap: 20px;
+}
+
+.parameter__icon{
+    width: 35px;
+    height: 35px;
+}
+
+.parameter__name {
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.parameter__action{
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: flex-end;   
+}

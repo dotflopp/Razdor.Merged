@@ -1,0 +1,1 @@
+export { default as WidthWrapper } from "./WidthWrapper.vue"

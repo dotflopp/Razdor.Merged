@@ -1,0 +1,20 @@
+.flat-button{
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 0.85em;
+    font-weight: bold;
+    background-color: var(--color-button-primary);
+}
+
+
+@media(hover: hover){
+    .flat-button:hover{
+        background-color: var(--color-button-pressed);
+    }
+}
+
+@media(hover: none){
+    .flat-button:active{
+        background-color: var(--color-button-pressed);
+    }
+}
