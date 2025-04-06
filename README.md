@@ -57,7 +57,7 @@ If you have any issues with live streaming, please [write it](https://github.com
 # How to run [MediaStreaming test environment](https://github.com/GoodDamn/MediaStreamingAndroid)
 
 ## How to test 📱
-1) Download stable release [.apk](https://raw.githubusercontent.com/GoodDamn/MediaStreamingAndroid/main/test_apps/0.2.1.apk)
+1) Download stable release [.apk](https://github.com/GoodDamn/MediaStreamingAndroid/releases/download/0.2.2/0.2.2.apk)
 2) Install application
 3) Grant video recording permission
 4) Write your IP-address destination (you can test once with 127.0.0.1 individually). You need to stream to peer client which has the same application.
