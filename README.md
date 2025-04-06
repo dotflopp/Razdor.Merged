@@ -1,3 +1,4 @@
+# Special merged repository for Foss.Kruzhok open-source
 
 # How to run [Razdor.Android](https://github.com/dotflopp/Razdor.Android)
 
