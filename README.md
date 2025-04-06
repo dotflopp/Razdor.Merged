@@ -1,5 +1,5 @@
 
-# How to run Razdor.Android
+# How to run [Razdor.Android](https://github.com/dotflopp/Razdor.Android)
 
 # Как протестировать?
 
@@ -19,8 +19,7 @@
 4) Запускайте
 
 
-# Welcome to Razdor.Backend
-
+# How to run [Razdor.Backend](https://github.com/dotflopp/Razdor.Backend)
 ## How to test with docker desktop
 1) Setup docker
 2) Clone repository
@@ -45,9 +44,7 @@ If you have any issues with live streaming, please [write it](https://github.com
 ```
 WARNING. A firewall may interfere with network detection.
 
-# Welcome to Razdor.Frontend
-
-## How to run 
+# How to run [Razdor.Frontend](https://github.com/dotflopp/Razdor.Frontend)
 1) Clone repository
 2) Go to project directory
 3) Then write in cmd >npm i
@@ -57,11 +54,10 @@ WARNING. A firewall may interfere with network detection.
 
 If you have any issues with live streaming, please [write it](https://github.com/dotflopp/Razdor.Frontend/issues)
 
-# Welcome to streaming test environment
-
+# How to run [MediaStreaming test environment](https://github.com/GoodDamn/MediaStreamingAndroid)
 
 ## How to test 📱
-1) Download stable release [.apk](http://raw.githubusercontent.com/GoodDamn/MediaStreamingAndroid/main/test_apps/0.2.1.apk)
+1) Download stable release [.apk](https://raw.githubusercontent.com/GoodDamn/MediaStreamingAndroid/main/test_apps/0.2.1.apk)
 2) Install application
 3) Grant video recording permission
 4) Write your IP-address destination (you can test once with 127.0.0.1 individually). You need to stream to peer client which has the same application.
