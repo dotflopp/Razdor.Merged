@@ -88,3 +88,6 @@ Also, you can change streaming settings inside app with [downloaded stable versi
 * rotation-degrees
 * frame-rate
 * bitrate
+
+https://github.com/user-attachments/assets/ac01bcaa-0a70-4798-a28c-90818ec7cefb
+
