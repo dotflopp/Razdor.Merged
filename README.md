@@ -80,7 +80,7 @@ Press LShift twice and type `CaptureRequest.kt`. Inside the `default()` function
 
 ### How to change camera streaming settings 🎥
 Press LShift twice and type `MediaFormat.kt`. Inside the `default()` function you can change parameters via setInteger() method. See [documentation](https://developer.android.com/reference/android/media/MediaFormat) with available options
-Also, you can change streaming settings inside app with [downloaded stable version .apk](https://github.com/GoodDamn/MediaStreamingAndroid/releases/download/0.2.2/0.2.2.apk). Click on 'options' button and you have:
+Also, you can change streaming settings inside app with [downloaded stable version .apk](https://github.com/GoodDamn/MediaStreamingAndroid/releases/download/0.2.3/0.2.3.apk). Click on 'options' button and you have:
 * capture-rate
 * i-frame-interval
 * width
